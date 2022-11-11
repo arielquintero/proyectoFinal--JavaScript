@@ -423,11 +423,6 @@ a:active {
   }
 }
 
-.td-swal {
-  display: flex;
-  justify-content: space-around;
-}
-
 /**********************************************************************************/
 /********************************   Estilos  **************************************/
 /*****************************   Proximamente  ************************************/
@@ -462,13 +457,20 @@ a:active {
   margin: 10px 0;
 }
 
-body.comming-soon {
-  background: hsla(0, 0%, 0%, 0.9);
+body.comming-soon-before {
+  /* background: hsla(0, 0%, 0%, 0.9); */
+  background: #f953c6;
+  background: -webkit-linear-gradient(to right, #b91d73, #f953c6);
+  background: linear-gradient(to right, #b91d73, #f953c6);
 }
 
-.comming-soon-main {
-  background: #ee0979;
-  background: linear-gradient(to right, #ff6a00, #ee0979);
+.comming-soon-after {
+  background: #fe8c00;
+  background: -webkit-linear-gradient(to right, #f83600, #fe8c00);
+  background: linear-gradient(to right, #f83600, #fe8c00);
+}
+.card-img-bg {
+  background: rgba(0, 0, 0, 0.6);
 }
 
 h1.comming-soon {
@@ -484,6 +486,10 @@ h1.comming-soon {
   top: 11%;
   width: 100%;
   animation: move linear 2000ms infinite;
+}
+
+.reserve {
+  width: 100px;
 }
 
 @keyframes move {

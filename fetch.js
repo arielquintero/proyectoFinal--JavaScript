@@ -3,8 +3,8 @@ const titleNews = document.querySelector(".title-news");
 const navbarCommingSoon = document.querySelector(".navbar-comming-soon");
 const cardsTitleNews= document.querySelector(".cards-title-news");
 const cards = document.querySelector(".cards");
-const bodyRegister = document.querySelector(".comming-soon");
-// const body = document.getElementsByTagName("body");
+const commingSoonBefore = document.querySelector(".comming-soon-before");
+// const mainCommingSoon = document.querySelector(".main-cooming-soon");
 
 fetch("https://fakestoreapi.com/products/category/electronics")
     .then((res) => res.json())
@@ -25,7 +25,7 @@ const creoElemento = (link) => {
         html += `
             <div class="row g-0 card-content">
                 <div class="col-md-4 card-content-img">
-                    <img src="${link[i].image}" class="card-img-top img-fluid alt="${link[i].title}">
+                    <img src="${link[i].image}" class="card-img-top img-fluid card-img-bg alt="${link[i].title}">
                 </div>
                 <div class="col-md-8 mt-3">
                     <div class="card-body description">
@@ -62,12 +62,11 @@ reserve.forEach((btn) => {
 (function entrada() {
     setTimeout(() => {
         titleNews.style.display = "none";
-        bodyRegister.style.backgroundColor = "#FFFFFF";
-        // bodyRegister.classList.add("navbar-comming-soon-main");
-        // body.classList.add("navbar-comming-soon-main");
+        commingSoonBefore.classList.add("comming-soon-after");
+        commingSoonBefore.classList.remove("comming-soon-before");
         navbarCommingSoon.classList.remove("navbar-comming-soon-hide");
         cardsTitleNews.classList.remove("cards-title-news-hide");
         cards.classList.remove("cards-hide");
-    },1500)
+    },2000)
 })()
 

@@ -273,29 +273,29 @@ const cerrarCompra = (ev) => {
                 console.log(divPagar.innerHTML);
                 Swal.fire({
                     template: templateDos,
-                    html: divPagar.innerHTML += 
-                                    `<tbody>
+                    html: (divPagar.innerHTML += `<tbody>
                                         <tr>
                                             <td>Componente: ${item.nombre}</td>
                                             <p></p>
                                             <td>Cantidad: ${item.cantidad}</td>
                                             <p></p>
-                                            <td>Subtotal: ${(item.precio * item.cantidad).toFixed(2)}</td>
+                                            <td>Subtotal: ${(
+                                                item.precio * item.cantidad
+                                            ).toFixed(2)}</td>
                                         </tr>
                                         </tbody>
                                       <br>
-                                      `,
-                    footer:` <strong>Total: ${total}</strong>`
-                    // alert("pagado");
-                    // carrito = [];
-                    // actualizarCarrito();
-                }).then(res => {
-                    
+                                      `),
+                    footer: ` <strong>Total: ${total}</strong>`,
+                }).then((res) => {
+                    if (res.isConfirmed) {
+                        Swal.fire('Pagado', '', 'success');
+                    }
+                    carrito = [];
+                    actualizarCarrito();
                 });
-
             }
         }
-        
     });
 };
 
